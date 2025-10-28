@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Interior Designer Portfolio
 
-## Getting Started
+A modern, animated portfolio website for interior designers built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Features
+
+- **Landing Page**: Clean, modern design with smooth animations
+- **Loading Page**: Animated stick figures with tab navigation
+- **Three Main Sections**:
+  - Projects: Portfolio showcase with project cards
+  - Team: Team member profiles and information
+  - About: Company information, values, and process
+- **Video Background**: Looping background video on the loading page
+- **Responsive Design**: Optimized for all device sizes
+- **Smooth Animations**: Powered by Framer Motion
+
+## Setup Instructions
+
+1. **Add Background Video**:
+   - Place your background video file in `public/videos/`
+   - Name it `background-video.mp4`
+   - Ensure the video is optimized for web (compressed, appropriate format)
+
+2. **Add Project Images**:
+   - Place project images in `public/images/`
+   - Name them `project1.jpg`, `project2.jpg`, etc.
+   - Recommended size: 800x600px or similar aspect ratio
+
+3. **Environment Variables**:
+   - Copy `.env.local` and update the values as needed
+   - Customize site name, designer name, and other settings
+
+## Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The project is ready for deployment on Vercel:
 
-## Learn More
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Deploy with one click
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Update colors in Tailwind classes throughout the components
+- Modify animations in the Framer Motion components
+- Add your own content to the tab components
+- Replace placeholder content with real project data
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## File Structure
 
-## Deploy on Vercel
+```
+src/
+├── app/
+│   ├── loading/
+│   │   └── page.tsx          # Main loading page with tabs
+│   ├── layout.tsx            # Root layout
+│   └── page.tsx              # Landing page
+└── components/
+    └── tabs/
+        ├── ProjectsTab.tsx   # Projects showcase
+        ├── TeamTab.tsx       # Team information
+        └── AboutTab.tsx      # About section
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies Used
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 14+ (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- React 18+
