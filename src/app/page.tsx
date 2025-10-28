@@ -91,19 +91,14 @@ export default function Home() {
     switch (activePage) {
       case 'landing':
         return (
-          <div className="flex flex-col items-center justify-center h-full relative">
+          <div className="flex flex-col items-center justify-center h-full">
             {/* Large Image */}
-            <div className="w-full max-w-4xl">
+            <div className="w-full max-w-4xl mb-8">
               <img 
                 src="/images/landing.png" 
                 alt="Landing page image" 
                 className="w-full h-auto object-contain rounded-sm"
               />
-            </div>
-            
-            {/* Quote Reference - Bottom Right of Page */}
-            <div className="absolute bottom-4 right-4">
-              <p className="text-black text-sm font-sans font-normal">1C3:9-11</p>
             </div>
           </div>
         );
@@ -184,7 +179,7 @@ export default function Home() {
       
       case 'inquire':
         return (
-          <div className="flex flex-col items-center justify-center h-full space-y-12">
+          <div className="relative h-full flex flex-col items-center justify-center space-y-12">
             {/* Contact Text */}
             <div className="text-center max-w-md">
               <p className="text-slate-700 font-sans font-normal leading-relaxed">
@@ -204,27 +199,7 @@ export default function Home() {
               />
             </div>
 
-            {/* Contact Info */}
-            <div className="flex items-center space-x-6">
-              <p className="text-slate-900 font-sans font-normal">+1 512 992 7981</p>
-              <a 
-                href="https://instagram.com/group_project_design_studio" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:opacity-80 transition-opacity cursor-pointer"
-              >
-                <img 
-                  src="/images/instagram_logo_icon_bw.jpg" 
-                  alt="Instagram" 
-                  className="w-6 h-6 object-contain"
-                />
-              </a>
-            </div>
 
-            {/* Bottom Reference */}
-            <div className="text-center">
-              <p className="text-slate-500 text-sm font-sans font-normal">1C3:9-11</p>
-            </div>
           </div>
         );
       
@@ -234,7 +209,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50 flex">
+    <div className="min-h-screen bg-stone-50 flex relative">
       {/* Left Sidebar */}
       <div className="w-1/3 h-screen bg-stone-50 p-12 flex flex-col sticky top-0">
         {/* Top Section */}
@@ -310,6 +285,30 @@ export default function Home() {
           </AnimatePresence>
         </div>
       </div>
+
+      {/* Quote Reference - Fixed Bottom Right Corner */}
+      <div className="fixed bottom-4 right-4 z-10">
+        <p className="text-black text-sm font-sans font-normal">1C3:9-11</p>
+      </div>
+
+      {/* Contact Info - Fixed Bottom Left (only on inquire page) */}
+      {activePage === 'inquire' && (
+        <div className="fixed bottom-4 left-1/3 ml-12 z-10 flex items-center space-x-6">
+          <p className="text-slate-900 font-sans font-normal">+1 512 992 7981</p>
+          <a 
+            href="https://instagram.com/group_project_design_studio" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity cursor-pointer"
+          >
+            <img 
+              src="/images/instagram_logo_icon_bw.jpg" 
+              alt="Instagram" 
+              className="w-6 h-6 object-contain"
+            />
+          </a>
+        </div>
+      )}
 
       {/* Project Detail Modal */}
       <AnimatePresence>
