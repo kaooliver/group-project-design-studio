@@ -95,7 +95,7 @@ export default function Home() {
             {/* Large Image */}
             <div className="w-full max-w-4xl mb-8">
               <img 
-                src="/images/landing.jpg" 
+                src="/images/landing.png" 
                 alt="Landing page image" 
                 className="w-full h-auto object-contain rounded-sm"
               />
