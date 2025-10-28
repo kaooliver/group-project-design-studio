@@ -92,18 +92,17 @@ export default function Home() {
       case 'landing':
         return (
           <div className="flex flex-col items-center justify-center h-full">
-            {/* Large Image */}
-            <div className="w-full max-w-4xl mb-8">
+            {/* Large Image with Overlay Text */}
+            <div className="w-full max-w-4xl relative">
               <img 
                 src="/images/landing.png" 
                 alt="Landing page image" 
                 className="w-full h-auto object-contain rounded-sm"
               />
-            </div>
-            
-            {/* Quote Reference */}
-            <div className="text-center">
-              <p className="text-slate-500 text-sm font-sans font-normal">1C3:9-11</p>
+              {/* Quote Reference - Bottom Right Corner */}
+              <div className="absolute bottom-4 right-4">
+                <p className="text-black text-sm font-sans font-normal">1C3:9-11</p>
+              </div>
             </div>
           </div>
         );
