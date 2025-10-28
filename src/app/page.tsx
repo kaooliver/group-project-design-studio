@@ -91,18 +91,19 @@ export default function Home() {
     switch (activePage) {
       case 'landing':
         return (
-          <div className="flex flex-col items-center justify-center h-full">
-            {/* Large Image with Overlay Text */}
-            <div className="w-full max-w-4xl relative">
+          <div className="flex flex-col items-center justify-center h-full relative">
+            {/* Large Image */}
+            <div className="w-full max-w-4xl">
               <img 
                 src="/images/landing.png" 
                 alt="Landing page image" 
                 className="w-full h-auto object-contain rounded-sm"
               />
-              {/* Quote Reference - Bottom Right Corner */}
-              <div className="absolute bottom-4 right-4">
-                <p className="text-black text-sm font-sans font-normal">1C3:9-11</p>
-              </div>
+            </div>
+            
+            {/* Quote Reference - Bottom Right of Page */}
+            <div className="absolute bottom-4 right-4">
+              <p className="text-black text-sm font-sans font-normal">1C3:9-11</p>
             </div>
           </div>
         );
