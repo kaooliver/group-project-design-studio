@@ -132,8 +132,8 @@ export default function Home() {
                   Principal & Founder
                 </p >
                 <p>
-                  Bachelor of Science in Interior Design from Baylor University - 2021
-                </p>
+                Bachelor of Science in Interior Design from Baylor University - 2021
+              </p>
               </div>
             </div>
 
@@ -164,20 +164,20 @@ export default function Home() {
               {projects.map((project, index) => (
                 <div key={project.id} className="space-y-4">
                   {project.id === 1 ? (
-                    <button 
+                  <button 
                       onClick={() => {
                         setSelectedProject(project);
                         setCurrentImageIndex(0);
                         setActivePage('project-detail');
                       }}
-                      className="w-full h-64 rounded-sm border border-black hover:opacity-80 transition-opacity cursor-pointer overflow-hidden"
-                    >
-                      <img 
-                        src={project.images[0]} 
-                        alt={`${project.title} - ${project.location}`} 
-                        className="w-full h-full object-cover"
-                      />
-                    </button>
+                    className="w-full h-64 rounded-sm border border-black hover:opacity-80 transition-opacity cursor-pointer overflow-hidden"
+                  >
+                    <img 
+                      src={project.images[0]} 
+                      alt={`${project.title} - ${project.location}`} 
+                      className="w-full h-full object-cover"
+                    />
+                  </button>
                   ) : (
                     <div className="w-full h-64 rounded-sm border border-black flex items-center justify-center">
                       <p className="text-slate-700 font-serif font-normal text-lg">coming soon</p>
@@ -251,12 +251,40 @@ export default function Home() {
             </button>
 
             {/* Current Image */}
-            <div className="flex-1">
-              <img 
-                src={selectedProject.images[currentImageIndex]} 
-                alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`} 
-                className="w-full h-auto object-contain rounded-sm"
-              />
+            <div className="flex-1 relative">
+              <div className="relative w-full">
+                {/* Invisible image to maintain container height */}
+                <img 
+                  src={selectedProject.images[currentImageIndex]}
+                  alt=""
+                  aria-hidden="true"
+                  className="invisible w-full h-auto object-contain"
+                />
+                {/* Clickable Left Half */}
+                <div
+                  onClick={() => navigateImage('prev')}
+                  className="absolute left-0 top-0 w-1/2 bottom-0 cursor-w-resize z-10"
+                  aria-label="Previous image"
+                />
+                {/* Clickable Right Half */}
+                <div
+                  onClick={() => navigateImage('next')}
+                  className="absolute right-0 top-0 w-1/2 bottom-0 cursor-e-resize z-10"
+                  aria-label="Next image"
+                />
+                {/* Image with fade transition */}
+                <AnimatePresence mode="sync">
+                  <motion.img
+                    key={selectedProject.images[currentImageIndex]}
+                    src={selectedProject.images[currentImageIndex]}
+                    alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
+                    className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1, transition: { duration: 0.6, ease: 'easeInOut' } }}
+                    exit={{ opacity: 0, transition: { duration: 0.6, ease: 'easeInOut' } }}
+                  />
+                </AnimatePresence>
+              </div>
             </div>
 
             {/* Next Arrow */}
