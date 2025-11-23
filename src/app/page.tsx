@@ -336,7 +336,7 @@ export default function Home() {
                   }
                   setActivePage(page);
                 }}
-                className={`block w-full text-left font-sans tracking-widest uppercase transition-colors cursor-pointer ${
+                className={`block w-fit text-left font-sans tracking-widest uppercase transition-colors cursor-pointer ${
                   activePage === page || (activePage === 'project-detail' && page === 'projects')
                     ? 'text-slate-900 font-semibold'
                     : 'text-slate-700 font-normal hover:text-slate-900'
