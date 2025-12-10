@@ -195,7 +195,7 @@ export default function Home() {
       
       case 'inquire':
         return (
-          <div className="relative h-full flex flex-col items-center justify-center space-y-12">
+          <div className="relative h-full flex flex-col items-center justify-center">
             {/* Contact Text */}
             <div className="text-center max-w-md">
               <p className="text-slate-700 font-serif font-normal leading-relaxed">
@@ -206,12 +206,12 @@ export default function Home() {
               </p>
             </div>
             
-            {/* Centered GPDS Logo */}
+            {/* Centered Cherubs Image */}
             <div className="flex justify-center">
               <img 
-                src="/images/GPDS_Logo.jpg" 
-                alt="GPDS Logo" 
-                className="w-48 h-auto object-contain"
+                src="/images/cherubs.png" 
+                alt="Cherubs" 
+                className="w-64 h-auto object-contain"
               />
             </div>
 
@@ -312,15 +312,15 @@ export default function Home() {
         {/* Top Section */}
         <div className="space-y-8">
           {/* Branding */}
-          <div className="flex justify-center mb-8">
+          <div className="mb-8">
             <button
               onClick={() => setActivePage('landing')}
-              className="hover:opacity-80 transition-opacity cursor-pointer"
+              className="hover:opacity-80 transition-opacity cursor-pointer p-0 -ml-7"
             >
               <img 
-                src="/images/GPDS_Logo.jpg" 
+                src="/images/GPDS_Logo.png" 
                 alt="GPDS Logo" 
-                className="w-48 h-auto object-contain"
+                className="w-64 h-auto object-contain"
               />
             </button>
           </div>
