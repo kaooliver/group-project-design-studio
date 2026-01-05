@@ -111,14 +111,19 @@ export default function Home() {
               <h2 className="text-2xl font-serif font-normal tracking-widest uppercase text-slate-900 mb-4">
                 GROUP ETHOS
               </h2>
-              <div className="space-y-4 text-slate-700 font-serif font-normal leading-relaxed">
+              <div className="space-y-4 text-slate-700 font-serif font-normal leading-relaxed tracking-widest">
                 <p>
-                  Balancing comfort with quiet intention, we believe home is both refuge and reflection. 
-                  Our approach centers on creating spaces that feel timeless, collected, and deeply personal.
+                  Balancing comfort with quiet intention, Group Project is a full-service design studio<br />
+                  that sees the home as both refuge and reflection. Spaces should be breathable --<br />
+                  designed to hold life as it happens, with room for the beautiful and the undone. Each<br />
+                  project is approached as a living composition: timeless, collected, and deeply personal.
                 </p>
                 <p>
-                  Founded in 2026 by Anna-Nicole Morris, Group Project Design Studio brings together 
-                  thoughtful design, quality craftsmanship, and intentional living.
+                  Founded in 2026 by Anna-Nicole Morris, the studio values process over ego, embracing<br />
+                  collaboration as its guiding force. Builders, artisans, architects, and clients are equal<br />
+                  parts of the whole, each contributing to environments that feel honest, restorative,<br />
+                  and distinctly lived-in. Grounded in history and energized by innovation, Group Project<br />
+                  designs homes that are made to evolve, gently supporting the rhythm of everyday life.
                 </p>
               </div>
             </div>
@@ -137,7 +142,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-end">
               <img 
                 src="/images/group.jpg" 
                 alt="Group decorative image" 
@@ -146,11 +151,10 @@ export default function Home() {
             </div>
 
             <div className="w-full">
-              <blockquote className="text-slate-700 font-serif font-normal leading-relaxed italic">
-                "For we are co-workers in God's service: you are God's field, God's building. 
-                By the grace God has given me, I laid a foundation as a wise builder, and someone else is building on it. 
-                But each one should build with care. For no one can lay any foundation other than the one already laid, 
-                which is Jesus Christ"
+              <blockquote className="text-slate-700 font-serif font-normal leading-relaxed">
+                "For we are co-workers in God's service: you are God's field, God's building. By the grace God has given<br /> 
+                me, I laid a foundation as a wise builder, and someone else is building on it. But each one should build<br />
+                with care. For no one can lay any foundation other than the one already laid, which is Jesus Christ"<br />
               </blockquote>
               <p className="text-slate-500 text-sm mt-4">1C3:9-11</p>
             </div>
@@ -195,11 +199,12 @@ export default function Home() {
       
       case 'inquire':
         return (
-          <div className="relative h-full flex flex-col items-center justify-center">
+          <div className="relative h-full flex flex-col items-center mt-35">
             {/* Contact Text */}
             <div className="text-center max-w-md">
               <p className="text-slate-700 font-serif font-normal leading-relaxed">
-                To inquire about projects, press or partnerships, please get in touch by writing to{' '}
+                To inquire about projects, press or<br />
+                partnerships, please get in touch by writing to{' '}
                 <a href="mailto:studio@gpdesignstudio.com" className="text-slate-900 hover:underline">
                   studio@gpdesignstudio.com
                 </a>
@@ -207,7 +212,7 @@ export default function Home() {
             </div>
             
             {/* Centered Cherubs Image */}
-            <div className="flex justify-center">
+            <div className="flex mt-[-75px]">
               <img 
                 src="/images/cherubs.png" 
                 alt="Cherubs" 
