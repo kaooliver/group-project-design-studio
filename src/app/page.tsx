@@ -332,7 +332,7 @@ export default function Home() {
 
           {/* Navigation */}
           <div className="space-y-4 mb-8">
-            {['projects', 'group', 'inquire'].map((page) => (
+            {['group','projects','inquire'].map((page) => (
               <button
                 key={page}
                 onClick={() => {
