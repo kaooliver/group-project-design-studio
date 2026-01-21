@@ -213,8 +213,8 @@ export default function Home() {
               <p className="text-slate-700 font-serif font-normal leading-relaxed">
                 To inquire about projects, press or<br />
                 partnerships, please get in touch by writing to{' '}
-                <a href="mailto:studio@gpdesignstudio.com" className="text-slate-900 hover:underline">
-                  studio@gpdesignstudio.com
+                <a href="mailto:studio@groupprojectdesignstudio.com" className="text-slate-900 hover:underline">
+                  studio@groupprojectdesignstudio.com
                 </a>
               </p>
             </div>
