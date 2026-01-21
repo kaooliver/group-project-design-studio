@@ -17,6 +17,9 @@ const wingman = localFont({
 export const metadata: Metadata = {
   title: "Group Project Design Studio",
   description: "Creating beautiful, functional spaces that tell your story through innovative design",
+  icons: {
+    icon: "/images/GPDS.jpeg",
+  },
 };
 
 export default function RootLayout({

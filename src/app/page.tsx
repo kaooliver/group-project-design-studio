@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface Project {
   id: number;
@@ -95,9 +96,12 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center h-full">
             {/* Large Image */}
             <div className="w-full max-w-4xl mb-8">
-              <img 
-                src="/images/landing.png" 
-                alt="Landing page image" 
+              <Image
+                src="/images/landing.png"
+                alt="Landing page image"
+                width={1600}
+                height={900}
+                priority
                 className="w-full h-auto object-contain rounded-sm"
               />
             </div>
@@ -143,9 +147,11 @@ export default function Home() {
             </div>
 
             <div className="flex justify-end">
-              <img 
-                src="/images/group.jpg" 
-                alt="Group decorative image" 
+              <Image
+                src="/images/group.jpg"
+                alt="Group decorative image"
+                width={512}
+                height={512}
                 className="w-64 h-auto object-contain rounded-sm"
               />
             </div>
@@ -176,9 +182,11 @@ export default function Home() {
                       }}
                     className="w-full h-64 rounded-sm border border-black hover:opacity-80 transition-opacity cursor-pointer overflow-hidden"
                   >
-                    <img 
-                      src={project.images[0]} 
-                      alt={`${project.title} - ${project.location}`} 
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} - ${project.location}`}
+                      width={1200}
+                      height={800}
                       className="w-full h-full object-cover"
                     />
                   </button>
@@ -213,9 +221,12 @@ export default function Home() {
             
             {/* Centered Cherubs Image */}
             <div className="flex mt-[-75px]">
-              <img 
-                src="/images/cherubs.png" 
-                alt="Cherubs" 
+              <Image
+                src="/images/cherubs.png"
+                alt="Cherubs"
+                width={512}
+                height={512}
+                loading="lazy"
                 className="w-64 h-auto object-contain"
               />
             </div>
@@ -259,9 +270,11 @@ export default function Home() {
             <div className="flex-1 relative">
               <div className="relative w-full">
                 {/* Invisible image to maintain container height */}
-                <img 
+                <Image
                   src={selectedProject.images[currentImageIndex]}
                   alt=""
+                  width={1600}
+                  height={900}
                   aria-hidden="true"
                   className="invisible w-full h-auto object-contain"
                 />
@@ -279,15 +292,20 @@ export default function Home() {
                 />
                 {/* Image with fade transition */}
                 <AnimatePresence mode="sync">
-                  <motion.img
+                  <motion.div
                     key={selectedProject.images[currentImageIndex]}
-                    src={selectedProject.images[currentImageIndex]}
-                    alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
-                    className="absolute inset-0 w-full h-full object-contain pointer-events-none"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1, transition: { duration: 0.6, ease: 'easeInOut' } }}
                     exit={{ opacity: 0, transition: { duration: 0.6, ease: 'easeInOut' } }}
-                  />
+                    className="absolute inset-0 w-full h-full"
+                  >
+                    <Image
+                      src={selectedProject.images[currentImageIndex]}
+                      alt={`${selectedProject.title} - Image ${currentImageIndex + 1}`}
+                      fill
+                      className="object-contain pointer-events-none"
+                    />
+                  </motion.div>
                 </AnimatePresence>
               </div>
             </div>
@@ -322,10 +340,13 @@ export default function Home() {
               onClick={() => setActivePage('landing')}
               className="hover:opacity-80 transition-opacity cursor-pointer p-0 -ml-7"
             >
-              <img 
-                src="/images/GPDS_Logo.png" 
-                alt="GPDS Logo" 
+              <Image
+                src="/images/GPDS_Logo.png"
+                alt="GPDS Logo"
+                width={512}
+                height={512}
                 className="w-64 h-auto object-contain"
+                priority
               />
             </button>
           </div>
@@ -426,9 +447,11 @@ export default function Home() {
             rel="noopener noreferrer"
             className="hover:opacity-80 transition-opacity cursor-pointer"
           >
-            <img 
-              src="/images/instagram_logo_icon_bw.jpg" 
-              alt="Instagram" 
+            <Image
+              src="/images/instagram_logo_icon_bw.jpg"
+              alt="Instagram"
+              width={24}
+              height={24}
               className="w-6 h-6 object-contain"
             />
           </a>
