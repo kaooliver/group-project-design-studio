@@ -102,7 +102,7 @@ export default function Home() {
                 width={1600}
                 height={900}
                 priority
-                className="w-full h-auto object-contain rounded-sm"
+                className="w-full h-auto object-contain"
               />
             </div>
           </div>
@@ -152,7 +152,7 @@ export default function Home() {
                 alt="Group decorative image"
                 width={512}
                 height={512}
-                className="w-64 h-auto object-contain rounded-sm"
+                className="w-64 h-auto object-contain"
               />
             </div>
 
@@ -180,19 +180,35 @@ export default function Home() {
                         setCurrentImageIndex(0);
                         setActivePage('project-detail');
                       }}
-                    className="w-full h-64 rounded-sm border border-black hover:opacity-80 transition-opacity cursor-pointer overflow-hidden"
+                    className="w-full h-64 relative hover:opacity-80 transition-opacity cursor-pointer border-1 border-black"
                   >
-                    <Image
-                      src={project.images[0]}
-                      alt={`${project.title} - ${project.location}`}
-                      width={1200}
-                      height={800}
-                      className="w-full h-full object-cover"
-                    />
+                    <div className="absolute inset-0 p-2">
+                      <Image
+                        src={project.images[0]}
+                        alt={`${project.title} - ${project.location}`}
+                        width={1200}
+                        height={800}
+                        className="w-full h-full object-cover border-1 border-black"
+                      />
+                    </div>
+                    {/* Corner boxes - transparent with black borders, positioned between the two borders */}
+                    <div className="absolute top-[-1px] left-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
+                    <div className="absolute top-[-1px] right-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
+                    <div className="absolute bottom-[-1px] left-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
+                    <div className="absolute bottom-[-1px] right-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
                   </button>
                   ) : (
-                    <div className="w-full h-64 rounded-sm border border-black flex items-center justify-center">
-                      <p className="text-slate-700 font-serif font-normal text-lg">coming soon</p>
+                    <div className="w-full h-64 relative border-1 border-black">
+                      <div className="absolute inset-0 p-2 flex items-center justify-center">
+                        <div className="w-full h-full border-1 border-black flex items-center justify-center">
+                          <p className="text-slate-700 font-serif font-normal text-lg">coming soon</p>
+                        </div>
+                      </div>
+                      {/* Corner boxes - transparent with black borders, positioned between the two borders */}
+                      <div className="absolute top-[-1px] left-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
+                      <div className="absolute top-[-1px] right-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
+                      <div className="absolute bottom-[-1px] left-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
+                      <div className="absolute bottom-[-1px] right-[-1px] w-2.5 h-2.5 border-1 border-black bg-transparent"></div>
                     </div>
                   )}
                   <div>

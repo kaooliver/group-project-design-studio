@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Group Project Design Studio",
   description: "Creating beautiful, functional spaces that tell your story through innovative design",
   icons: {
-    icon: "/images/GPDS.jpeg",
+    icon: "/images/GPDS.png",
   },
 };
 
